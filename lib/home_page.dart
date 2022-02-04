@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,51 +12,60 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Image.asset('assets/images/saif-ul-malook.png'),
-          // Header section ************
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0, bottom: 20),
-            child: ListTile(
-              title: Text('Jheel Saiful Malook'),
-              subtitle: Text('Swat Pakistan'),
-              trailing: SizedBox(
-                width: 60,
-                child: Row(
-                  children: [
-                    Icon(Icons.star, color: Colors.red),
-                    Text('41', style: TextStyle(color: Colors.grey)),
-                  ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset('assets/images/Lake-Saif-ul-Malook.jpg'),
+            Image.network(
+                'https://raw.githubusercontent.com/JaveedIshaq/flutter-ui-basics/main/assets/images/saif-ul-malook.png'),
+            // Header section ************
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0, bottom: 20),
+              child: ListTile(
+                title: Text('Jheel Saiful Malook'),
+                subtitle: Text('Swat Pakistan'),
+                trailing: SizedBox(
+                  width: 60,
+                  child: Row(
+                    children: [
+                      Icon(Icons.star, color: Colors.red),
+                      Text('41', style: TextStyle(color: Colors.grey)),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          // Nav section ************
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              NavIconButtton(
-                title: 'Call',
-                icon: Icons.phone,
-              ),
-              NavIconButtton(
-                title: 'Route',
-                icon: Icons.directions,
-              ),
-              NavIconButtton(
-                title: 'Share',
-                icon: Icons.share,
-              ),
-            ],
-          ),
+            // Nav section ************
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                NavIconButtton(
+                  title: 'Call',
+                  icon: Icons.phone,
+                ),
+                NavIconButtton(
+                  title: 'Route',
+                  icon: Icons.directions,
+                ),
+                NavIconButtton(
+                  title: 'Share',
+                  icon: Icons.share,
+                ),
+              ],
+            ),
 
-          Padding(
-            padding: const EdgeInsets.all(38.0),
-            child: Text(
-                'This guide then takes a step back to explain Flutter’s approach to layout, and shows how to place a single widget on the screen. After a discussion of how to lay widgets out horizontally and vertically, some of the most common layout widgets are covered.'),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.all(38.0),
+              child: Text(
+                  'This guide then takes a step back to explain Flutter’s approach to layout, and shows how to place a single widget on the screen. After a discussion of how to lay widgets out horizontally and vertically, some of the most common layout widgets are covered.'),
+            ),
+
+            Text('DOGS Legs: ${dog.legs}'),
+            Text('Socail Status: ${dog.canLiveWithMan}'),
+            Text('Cat: ${myCat.canLiveWithMan}'),
+            Text('Cat: ${myCat.color}'),
+          ],
+        ),
       ),
     );
   }
